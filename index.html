@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rum's Calculator</title>
+</head>
+
+<body>
+
+    <h1
+        style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:#ea3862">
+        My Calculator</h1>
+    <div class="container">
+        <input type="text" id="display">
+        <div class="buttons">
+
+            <button onclick="clearDisplay()" class="clr">C</button>
+            <button onclick="backspace()" class="clr">←</button>
+            <button onclick="inputValue('%')" class="clr">%</button>
+            <button onclick="inputValue('*')" class="clr">x</button>
+            <button onclick="inputValue('7')">7</button>
+            <button onclick="inputValue('8')">8</button>
+            <button onclick="inputValue('9')">9</button>
+            <button onclick="inputValue('/')" class="clr">÷</button>
+            <button onclick="inputValue('4')">4</button>
+            <button onclick="inputValue('5')">5</button>
+            <button onclick="inputValue('6')">6</button>
+            <button onclick="inputValue('+')" class="clr">+</button>
+            <button onclick="inputValue('1')">1</button>
+            <button onclick="inputValue('2')">2</button>
+            <button onclick="inputValue('3')">3</button>
+            <button onclick="inputValue('-')" class="clr">-</button>
+            <button onclick="inputValue('0')">0</button>
+            <button onclick="inputValue('.')">.</button>
+            <button onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<style>
+    body {
+        background-color: #e1dde0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f9e4a9e0;
+        border-radius: 35px;
+        width: 500px;
+        padding: 20px;
+        box-shadow: 3px 3px 7px rgb(136, 135, 135);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 430px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+        margin: 10px;
+        height: 300px;
+        width: 400px;
+    }
+
+    .equal {
+        grid-column: span 2;
+        background-color: #ff7293;
+        color: white;
+    }
+
+    .equal:hover {
+        background-color: #f49db4;
+
+    }
+
+    .equal:active {
+        background-color: #f2c0d4;
+    }
+
+    button {
+        height: 45px;
+        min-width: 40px;
+        border-radius: 50px;
+        border: none;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: rgb(252, 111, 147);
+        background-color: #ffffff;
+        margin: 10px;
+        box-shadow: 2px 2px 3px grey;
+    }
+
+    button:hover {
+        background: #fccbd0;
+    }
+
+    button:active {
+        background: #d4b4b4;
+    }
+
+    #display {
+        padding: 7px;
+        align-items: center;
+        font-size: 30px;
+        margin: 8px;
+        border-radius: 10px;
+        border: 1px solid;
+
+    }
+
+    .clr {
+        color: #ffffff;
+        background-color: #f59922;
+    }
+
+    .clr:hover {
+        background-color: #827e7e;
+    }
+</style>
+
+<script>
+    const display = document.getElementById("display");
+
+    function inputValue(input) {
+        display.value += input;
+    }
+
+    function clearDisplay() {
+        display.value = "";
+    }
+
+    function backspace() {
+        display.value = display.value.slice(0, -1);
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        }
+
+        catch {
+            display.value = "error";
+        }
+
+    }
+
+
+
+</script>
