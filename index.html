@@ -50,29 +50,59 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100vh;
+        margin: 0;
     }
 
     .container {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f9e4a9e0;
-        border-radius: 35px;
-        width: 500px;
+        border-radius: 20px;
+        max-width: 90%;
+        width: 400px;
         padding: 20px;
         box-shadow: 3px 3px 7px rgb(136, 135, 135);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 430px;
+    }
+
+    #display {
+        width: 90%;
+        padding: 10px;
+        font-size: 1.8rem;
+        text-align: right;
+        border-radius: 10px;
+        border: 1px solid #ccc;
     }
 
     .buttons {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 2px;
-        margin: 10px;
-        height: 300px;
-        width: 400px;
+        gap: 10px;
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    button {
+        height: 60px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        color: rgb(252, 111, 147);
+        background-color: #ffffff;
+        box-shadow: 2px 2px 3px grey;
+    }
+
+    button:hover{
+        background-color: #ffd6d6;
+    }
+
+    button:active{
+        background-color: #f5afaf;
     }
 
     .equal {
@@ -81,45 +111,8 @@
         color: white;
     }
 
-    .equal:hover {
-        background-color: #f49db4;
-
-    }
-
-    .equal:active {
-        background-color: #f2c0d4;
-    }
-
-    button {
-        height: 45px;
-        min-width: 40px;
-        border-radius: 50px;
-        border: none;
-        font-size: 2rem;
-        font-weight: bold;
-        cursor: pointer;
-        color: rgb(252, 111, 147);
-        background-color: #ffffff;
-        margin: 10px;
-        box-shadow: 2px 2px 3px grey;
-    }
-
-    button:hover {
-        background: #fccbd0;
-    }
-
-    button:active {
-        background: #d4b4b4;
-    }
-
-    #display {
-        padding: 7px;
-        align-items: center;
-        font-size: 30px;
-        margin: 8px;
-        border-radius: 10px;
-        border: 1px solid;
-
+    .equal:hover{
+        background-color: #faa1b6;  
     }
 
     .clr {
@@ -127,8 +120,30 @@
         background-color: #f59922;
     }
 
-    .clr:hover {
-        background-color: #827e7e;
+    .clr:hover{
+        background-color: #f8b64a;
+    }
+
+    .clr:active{
+        background-color: #f1a922;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 500px) {
+        .container {
+            width: 90%;
+            padding: 15px;
+        }
+
+        .buttons {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        button {
+            height: 50px;
+            font-size: 1.2rem;
+        }
     }
 </style>
 
